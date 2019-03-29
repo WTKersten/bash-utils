@@ -1,0 +1,7 @@
+# Kills all current chrome processes and opens chrome in the given timezone.
+# List of timezones see column TZ database name https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# Example use: chrome-tz US/Pacific
+chrome-tz () {
+	killall Google\ Chrome
+	TZ=$1 open -na "Google Chrome" --args "--user-data-dir=$HOME/chrome-profile"
+}
